@@ -39,6 +39,37 @@ Features:
 bun run src/03-basic-job-scheduler.ts
 ```
 
+## Lesson 4: Retry logic
+
+Features:
+
+- Retry a job if it fails.
+- Retry a job a certain number of times.
+- Retry a job with a delay between retries.
+
+```
+bun run src/04-basic-retry.ts
+```
+
+## Lesson 5: Job Queue & Retry logic
+
+Features:
+
+- Queue jobs to run in order.
+- Retry a job if it fails.
+- Retry a job a certain number of times.
+- Retry a job with a delay between retries.
+
+```
+bun run src/05-job-queue-retry.ts
+```
+
+## References
+
+- [BullMQ](https://github.com/taskforcesh/bullmq)
+- [Agenda](https://github.com/agenda/agenda)
+- [p-retry](https://github.com/sindresorhus/p-retry)
+
 ## Troubleshooting
 
 For Zed issue with biome formatting, use this custom formatter settings:
