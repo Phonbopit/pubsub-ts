@@ -42,5 +42,3 @@ class InMemoryPubSub implements IPubSub {
 }
 
 export default InMemoryPubSub
-
-// Usage:

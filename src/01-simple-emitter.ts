@@ -16,10 +16,3 @@ emitter.on(event, (payload: MessagePayload) => {
 })
 
 export default emitter
-
-// setTimeout(() => {
-//   emitter.emit(event, {
-//     text: "Hello from emitter!",
-//     timestamp: new Date(),
-//   });
-// }, 2000);
