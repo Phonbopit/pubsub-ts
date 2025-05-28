@@ -4,13 +4,16 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "bun run src/index.ts",
+    "test": "vitest",
     "format": "biome format --write ./src",
     "lint": "biome lint --write ./src",
     "check": "biome check --write ./src"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "vitest": "^3.1.4"
   },
   "peerDependencies": {
     "typescript": "^5"

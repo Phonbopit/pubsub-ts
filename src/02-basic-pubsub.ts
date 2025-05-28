@@ -2,12 +2,13 @@ type Listener<T = unknown> = (data: T) => void
 
 interface IPubSub {
   subscribe<T>(event: string, listener: Listener<T>): () => void
-  unsubscribe(event: string, listener: Listener): void
+  unsubscribe<T>(event: string, listener: Listener): void
   publish<T>(event: string, data: T): void
 }
 
 class InMemoryPubSub implements IPubSub {
-  private topics: Map<string, Set<Listener>> = new Map()
+  // biome-ignore lint/suspicious/noExplicitAny:
+  private topics: Map<string, Set<Listener<any>>> = new Map()
 
   subscribe<T>(topic: string, listener: Listener<T>): () => void {
     let listeners = this.topics.get(topic)
@@ -40,14 +41,6 @@ class InMemoryPubSub implements IPubSub {
   }
 }
 
+export default InMemoryPubSub
+
 // Usage:
-// type Greeting = { message: string };
-
-// const pubSub = new InMemoryPubSub();
-// const unsubscribe = pubSub.subscribe<Greeting>("greeting", (message) =>
-//   console.log("Received message:", message),
-// );
-
-// pubSub.publish("greeting", { message: "Ahoy!" });
-
-// unsubscribe();
